@@ -6,7 +6,7 @@
     --clr-sc: hsla(185, 100%, 29%, 0.5);
     --clr-bdy-bg: hsl(216, 22%, 95%);
     --clr-bg-lt: #ffffff;
-    --bdy-width: 428px
+    --bdy-width: min(100vw, 428px)
 }
 
 /* ------------------Reset--------------------- */
