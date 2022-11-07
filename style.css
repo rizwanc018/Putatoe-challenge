@@ -1,0 +1,510 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --clr-prm: hsl(185, 100%, 28%);
+    --clr-prm-tr: hsla(185, 100%, 28%, .1);
+    --clr-sc: hsla(185, 100%, 29%, 0.5);
+    --clr-bdy-bg: hsl(216, 22%, 95%);
+    --clr-bg-lt: #ffffff;
+    --bdy-width: 428px
+}
+
+/* ------------------Reset--------------------- */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+    background-color: #ffffff;
+}
+
+/* Set core body defaults */
+body {
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    /* font-size: 16px; */
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ------------------custom--------------------- */
+body {
+    width: var(--bdy-width);
+    margin: auto;
+    height: 100vh;
+    font-family: 'Raleway', sans-serif;
+    overflow-y:scroll;
+}
+
+p {
+    font-size: 12px;
+}
+
+header {
+    background-color: var(--clr-prm);
+}
+
+header .icon:not(.search-icon) {
+    fill: var(--clr-bg-lt);
+}
+
+.icon {
+    width: 1.3rem;
+    height: 1.3rem;
+    fill: var(--clr-prm);
+    cursor: pointer;
+}
+
+.header-top {
+    padding: .5rem .5rem .25rem .5rem;
+}
+
+.header-top,
+.header-bottom,
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+
+}
+
+.header-top input,
+.search-wrapper,
+.search-wrapper input {
+    flex: 1;
+}
+
+.header-top input {
+    border: 2px solid var(--clr-bg-lt);
+    background-color: var(--clr-prm);
+    border-radius: .62rem;
+    height: 1.3rem;
+    color: var(--clr-bg-lt);
+}
+
+.header-top input::placeholder {
+    color: var(--clr-bg-lt);
+}
+
+::placeholder {
+    font-size: .8rem;
+}
+
+.search-wrapper {
+    background-color: var(--clr-bg-lt);
+    gap: 0;
+    border-radius: .4rem;
+}
+
+.search-wrapper>* {
+    border: 2px solid var(--clr-bg-lt);
+    height: 2rem;
+    border-radius: .4rem;
+
+}
+
+.search-icon {
+    padding-inline-start: .2rem;
+}
+
+.header-bottom {
+    padding: .5rem 1.2rem;
+    background-color: var(--clr-prm);
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: var(--bdy-width);
+    z-index: 9999;
+}
+
+.sticky + .content {
+    padding-top: 5rem;
+  }
+
+.notification-icon-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.notification-icon-container::after {
+    content: "2";
+    position: absolute;
+    color: var(--clr-bg-lt);
+    text-align: center;
+    height: 1rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: red;
+    top: 0;
+    right: -25%;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+/* -----------------------hero-------------------------------------- */
+
+main {
+    padding: .35rem .25rem;
+    background-color: var(--clr-bdy-bg);
+    overflow-x: hidden;
+}
+
+.hero {
+    color: var(--clr-prm);
+
+}
+
+.hero-carousal {
+    position: relative;
+    display: flex;
+    background-color: var(--clr-bg-lt);
+    padding: .35rem;
+    margin-bottom: .5rem;
+    overflow: hidden;
+}
+
+.hero-carousal,
+.hero-carousal img {
+    border-radius: 5px;
+}
+
+#hero-carousal .item img {
+    display: block;
+    width: 100%;
+    height: 25vh;
+}
+
+
+.owl-dots {
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.carousal,
+.menu {
+    display: flex;
+    background-color: var(--clr-bg-lt);
+    gap: 1rem;
+
+}
+
+.menu {
+    flex-wrap: wrap;
+    padding-block: 1.5rem;
+    border-radius: 5px;
+}
+
+.hero-icon-wrapper p {
+    font-size: .6rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.hero-icon-wrapper {
+    text-align: center;
+    width: 22%;
+}
+
+.hero-icon-wrapper .icon {
+    height: 1.75rem;
+    width: 1.75rem;
+}
+
+/* ------------------------------------service--------------------------------- */
+.service-heading {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--clr-prm);
+    text-align: center;
+    background-color: var(--clr-prm-tr);
+    margin-block: 1rem;
+}
+
+.service h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    color: hsl(0, 0%, 37%);
+    margin-block-start: 1.2rem;
+
+}
+
+hr {
+    width: 70%;
+    height: 1px;
+    color: hsl(0, 0%, 87%);
+    margin-block: .1rem .75rem;
+}
+
+.service-card-container {
+    display: flex;
+    gap: .7rem;
+}
+
+.service-card-container .card {
+    background-color: var(--clr-bg-lt);
+    padding: .5rem .4rem;
+    border-radius: 5px;
+    width: 5.75rem;
+    flex-shrink: 0;
+}
+
+.service-card-container .card img,
+.thumbnail {
+    width: 5rem;
+    height: 4.75rem;
+    margin: auto;
+}
+
+.service-card-container .card p {
+    line-height: 1;
+    font-weight: 300;
+    font-size: 10px;
+    text-align: center;
+    padding-top: .3rem;
+
+}
+
+.thumbnail {
+    background-color: hsl(290, 79%, 68%);
+    text-align: center;
+    vertical-align: middle;
+    font-size: 44px;
+    font-weight: 700;
+    margin: auto;
+    color: var(--clr-bg-lt);
+}
+
+/* ------------------------------------------------Our service -------------------------------- */
+
+.our-services {
+    padding-bottom: 3rem;
+}
+
+
+.our-services-card-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+.os {
+    width: 49%;
+    height: 6rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: .55rem;
+    position: relative;
+}
+
+.os p {
+    text-align: center;
+    position: relative;
+    bottom: -77%;
+    color: var(--clr-bg-lt);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.os::before {
+    content: "20% off";
+    font-size: 14px;
+    font-weight: 500;
+    position: absolute;
+    right: 0;
+    background-color: hsl(120, 98%, 36%);
+    color: var(--clr-bg-lt);
+    padding: 0 .3rem 0 .2rem;
+}
+
+.os-dailyneeds {
+    background-image: linear-gradient(hsla(0, 0%, 100%, 0) 50%, hsla(0, 100%, 0%, 1)), url("/img/dailyneeds.jpg");
+}
+
+.os-education {
+    background-image: linear-gradient(hsla(0, 0%, 100%, 0) 50%, hsla(0, 100%, 0%, .9)), url("/img/education.png");
+}
+
+.os-construction {
+    background-image: linear-gradient(hsla(0, 0%, 100%, 0) 50%, hsla(0, 100%, 0%, .9)), url("/img/construction.png");
+}
+
+.os-itemrepair {
+    background-image: linear-gradient(hsla(0, 0%, 100%, 0) 50%, hsla(0, 100%, 0%, .9)), url("/img/itemRepair.jpg");
+}
+
+.os-consultancy {
+    background-image: linear-gradient(hsla(0, 0%, 100%, 0) 50%, hsla(0, 100%, 0%, .9)), url("/img/consultancy2.png");
+}
+
+.os-courier {
+    background-image: linear-gradient(hsla(0, 0%, 100%, 0) 50%, hsla(0, 100%, 0%, .9)), url("/img/courier.jpg");
+}
+
+.os-dance {
+    background-image: linear-gradient(hsla(0, 0%, 100%, 0) 50%, hsla(0, 100%, 0%, .9)), url("/img/danceMusic.png");
+}
+
+.os-health {
+    background-image: linear-gradient(hsla(0, 0%, 100%, 0) 50%, hsla(0, 100%, 0%, .9)), url("/img/health.png");
+}
+
+.os-tours {
+    background-image: linear-gradient(hsla(0, 0%, 100%, 0) 50%, hsla(0, 100%, 0%, .9)), url("/img/toursTravels.jpg");
+}
+
+.os-eventmanagement {
+    background-image: linear-gradient(hsla(0, 0%, 100%, 0) 50%, hsla(0, 100%, 0%, .9)), url("/img/eventmanagement.png");
+}
+
+.os-fitnes {
+    background-image: linear-gradient(hsla(0, 0%, 100%, 0) 50%, hsla(0, 100%, 0%, .9)), url("/img/fitness.png");
+}
+
+.os-food {
+    background-image: linear-gradient(hsla(0, 0%, 100%, 0) 50%, hsla(0, 100%, 0%, .9)), url("/img/food.jpg");
+}
+
+.os-books {
+    background-image: linear-gradient(hsla(0, 0%, 100%, 0) 50%, hsla(0, 100%, 0%, .9)), url("/img/books.jpeg");
+}
+
+.os-furniture {
+    background-image: linear-gradient(hsla(0, 0%, 100%, 0) 50%, hsla(0, 100%, 0%, .9)), url("/img/furniture.jpeg");
+}
+
+.os-laundry {
+    background-image: linear-gradient(hsla(0, 0%, 100%, 0) 50%, hsla(0, 100%, 0%, .9)), url("/img/laundry.jpg");
+}
+
+.os-electronics {
+    background-image: linear-gradient(hsla(0, 0%, 100%, 0) 50%, hsla(0, 100%, 0%, .9)), url("/img/electronics.jpg");
+}
+
+.os-cleaning {
+    background-image: linear-gradient(hsla(0, 0%, 100%, 0) 50%, hsla(0, 100%, 0%, .9)), url("/img/cleaning.png");
+}
+
+.os-beauty {
+    background-image: linear-gradient(hsla(0, 0%, 100%, 0) 50%, hsla(0, 100%, 0%, .9)), url("/img/beauty.png");
+}
+
+.os-sports {
+    background-image: linear-gradient(hsla(0, 0%, 100%, 0) 50%, hsla(0, 100%, 0%, .9)), url("/img/sports.jpg");
+}
+
+.os-internet {
+    background-image: linear-gradient(hsla(0, 0%, 100%, 0) 50%, hsla(0, 100%, 0%, .9)), url("/img/internet.jpeg");
+}
+
+.os-realestate {
+    background-image: linear-gradient(hsla(0, 0%, 100%, 0) 50%, hsla(0, 100%, 0%, .9)), url("/img/realestate.jpeg");
+}
+
+.os-handcrafts {
+    background-image: linear-gradient(hsla(0, 0%, 100%, 0) 50%, hsla(0, 100%, 0%, .9)), url("/img/handcraft.jpeg");
+}
+
+
+/* --------------------------------------------footer----------------------------------------- */
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem 1rem;
+    color: var(--clr-prm);
+    box-shadow: 0px -1px 100px 0px hsl(185, 25%, 75%) ;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: var(--bdy-width);
+    background-color: var(--clr-bg-lt);
+    z-index: 99999;
+}
+
+footer>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer img {
+    width: 2.25rem;
+    height: 2.25rem;
+    background-color: var(--clr-prm);
+    border-radius: 3px;
+    -webkit-clip-path: polygon(16% 0, 84% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(16% 0, 84% 0, 100% 100%, 0% 100%);
+}
